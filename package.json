@@ -1,0 +1,48 @@
+{
+  "name": "fed-project-3",
+  "version": "1.0.0",
+  "description": "Final project for the 2016 frontend designer apprentices at Sparkbox.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prestart": "npm run copy && npm run sass && npm run icons && npm run scripts",
+    "start": "parallelshell 'npm run watch' 'npm run server'",
+    "server": "node server.js",
+    "watch": "node tasks/watch.js",
+    "sass": "node-sass src/scss/ -o dist/css",
+    "scripts": "ncp src/js dist --stopOnErr",
+    "copy": "ncp src/public dist --stopOnErr",
+    "icons": "node tasks/icons.js",
+    "postsass": "postcss --use autoprefixer -c ./tasks/postcss.config.json dist/css/*.css -d dist/css",
+    "html": "node static.js"
+  },
+  "author": "Sparkbox",
+  "license": "ISC",
+  "dependencies": {
+    "autoprefixer": "^6.3.7",
+    "basic-auth": "^1.0.4",
+    "chokidar": "^1.6.0",
+    "compression": "^1.6.2",
+    "connect": "^3.4.1",
+    "exit-hook": "^1.1.1",
+    "front-matter": "^2.1.0",
+    "fs-extra": "^0.30.0",
+    "globby": "^6.0.0",
+    "grunticon-lib": "^1.1.6",
+    "handlebars": "^4.0.5",
+    "handlebars-helpers": "^0.7.3",
+    "lodash": "^4.14.2",
+    "ncp": "^2.0.0",
+    "node-sass": "^3.8.0",
+    "parallelshell": "^2.0.0",
+    "path": "^0.12.7",
+    "postcss": "^5.1.2",
+    "postcss-cli": "^2.5.2",
+    "require-dir": "^0.3.0",
+    "serve-static": "^1.11.1",
+    "shelljs": "^0.7.3",
+    "tiny-lr": "^0.2.1"
+  },
+  "engines": {
+    "node": "4.2.2"
+  }
+}
