@@ -10,7 +10,7 @@ The HTML is rendered using Handlebars templates, which rely on three areas:
 - **Layout:** `src/layout` The layout .hbs files handle the over html, head aread of the HTML document
 - **Pages:** `src/pages` The pages .hbs files are the body area of the HTML document
 - **Partials:** `src/partials` The partials can be used between the layout and pages .hbs files to breakdown code into more manageable chunks.
-- 
+
 ## CSS
 The CSS is rendered using a mixture of libSass and PostCSS. Use `src/scss` to manage Sass files and partials.
 
